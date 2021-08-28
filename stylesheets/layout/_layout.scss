@@ -1,0 +1,25 @@
+body > nav {
+    @include mobile-container;
+    display: flex;
+    justify-content: space-between;
+    padding: 5vw 0;
+
+    img {
+        flex-basis: 30%;
+    }
+    div.nav-links {
+        display: none;
+        //keep developing here
+    }
+    div.burger{
+        aspect-ratio: 1/1;
+        height: 40px;
+        background: url(../../images/icon-hamburger.svg);
+        background-size: cover;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+}
