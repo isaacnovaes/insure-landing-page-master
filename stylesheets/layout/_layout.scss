@@ -1,25 +1,110 @@
-body > nav {
-    @include mobile-container;
-    display: flex;
-    justify-content: space-between;
-    padding: 5vw 0;
+body {
+	overflow-x: hidden;
+}
+nav {
+	@include mobile-container; //set max-width for desktop
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-top: 25px;
 
-    img {
-        flex-basis: 30%;
-    }
-    div.nav-links {
-        display: none;
-        //keep developing here
-    }
-    div.burger{
-        aspect-ratio: 1/1;
-        height: 40px;
-        background: url(../../images/icon-hamburger.svg);
-        background-size: cover;
+	img {
+		width: 130px;
+	}
+	div.burger {
+		outline: 1px solid $dark-violet;
+		padding: 10px;
 
-        &:hover {
-            cursor: pointer;
-        }
+		div {
+			margin: 5px auto;
+			height: 3px;
+			width: 25px;
+			background: $black;
+			transform-origin: left;
+			transition: 0.5s ease-in;
+		}
 
-    }
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	div.active-burger {
+		div#line1 {
+			animation: line1 0.5s forwards;
+		}
+		div#line2 {
+			display: none;
+		}
+		div#line3 {
+			animation: line3 0.5s forwards;
+		}
+		@keyframes line1 {
+			to {
+				transform: rotate(45deg) translate(1px, -5px);
+			}
+		}
+		@keyframes line3 {
+			to {
+				transform: rotate(-45deg) translate(-2px, 8px);
+			}
+		}
+	}
+	div.nav-links {
+		transition: 0.5s ease-in;
+		display: none;
+	}
+	div.active-burger-content {
+		position: absolute;
+		z-index: 5;
+		top: 90px;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		min-height: 550px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: $very-dark-violet url(../../images/bg-pattern-mobile-nav.svg) no-repeat bottom;
+		background-size: 100%;
+		animation: animate-burger-content 0.8s ease-out both;
+
+		@keyframes animate-burger-content {
+			from {
+				left: 100%;
+			}
+			to {
+				left: 0;
+			}
+		}
+		a {
+			display: block;
+			width: 90%;
+			text-align: center;
+			margin: 25px auto 0;
+			padding: 10px;
+			font-family: $font-family-body;
+			font-weight: 400;
+			color: $white;
+			font-size: 1.5rem;
+			letter-spacing: 2px;
+			transition: 0.5s ease-in;
+			animation: animate-burger-content-links .6s ease-out both;
+
+			@keyframes animate-burger-content-links {
+				from {
+					opacity: 0;
+					transform: translateX(250px) rotate(-45deg);
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0) rotate(0);
+				}
+			}
+
+			&:last-of-type {
+				outline: 2px solid $white;
+			}
+		}
+	}
 }
