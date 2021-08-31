@@ -1,8 +1,11 @@
 body {
 	overflow-x: hidden;
 }
+.overflow-hide {
+	overflow-y: hidden;
+}
 nav {
-	@include mobile-container; //set max-width for desktop
+	@include mobile-container;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -13,7 +16,8 @@ nav {
 		width: 130px;
 	}
 	div.burger {
-		outline: 1px solid $dark-violet;
+		height: 45px;
+		outline: 2px solid $dark-violet;
 		padding: 10px;
 
 		div {
@@ -60,8 +64,8 @@ nav {
 		top: 90px;
 		bottom: 0;
 		left: 0;
+		height: calc(100vh-90px);
 		width: 100%;
-		min-height: 550px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -89,7 +93,7 @@ nav {
 			font-size: 1.5rem;
 			letter-spacing: 2px;
 			transition: 0.5s ease-in;
-			animation: animate-burger-content-links .6s ease-out both;
+			animation: animate-burger-content-links 0.6s ease-out both;
 
 			@keyframes animate-burger-content-links {
 				from {
@@ -105,6 +109,146 @@ nav {
 			&:last-of-type {
 				outline: 2px solid $white;
 			}
+		}
+	}
+}
+
+div.first-block-container {
+	margin-top: 25px;
+	background-color: $dark-violet;
+	background-clip: content-box;
+	position: relative;
+	z-index: 0;
+	padding-bottom: 400px;
+
+	&:before {
+		content: " ";
+		display: block;
+		width: 200px;
+		height: 196.5px;
+		background: url(../../images/bg-pattern-intro-left-mobile.svg) no-repeat;
+		background-size: cover;
+		position: absolute;
+		top: 500px;
+		z-index: 0;
+	}
+	&::after {
+		content: " ";
+		display: block;
+		width: 150px;
+		height: 400px;
+		background: url(../../images/bg-pattern-intro-right-mobile.svg) no-repeat;
+		background-size: cover;
+		position: absolute;
+		bottom: 200px;
+		right: 0;
+		z-index: 0;
+	}
+
+	figure {
+		img {
+			display: block;
+			width: 100%;
+			height: 500px;
+			object-fit: cover;
+			position: relative;
+			z-index: 5;
+		}
+	}
+
+	section {
+		@include mobile-container;
+		margin-top: 100px;
+		padding-bottom: 100px;
+
+		h1 {
+			color: $white;
+			font-family: $font-family-heading;
+			font-weight: 400;
+			font-size: 3.5rem;
+			text-align: center;
+		}
+		p {
+			margin-top: 20px;
+			color: $white;
+			font-family: $font-family-body;
+			text-align: center;
+			line-height: 1.8;
+		}
+		button {
+			display: block;
+			margin: 25px auto;
+			padding: 15px 30px;
+			color: $white;
+			text-transform: uppercase;
+			font-family: $font-family-body;
+			font-size: 1rem;
+			font-weight: 700;
+			letter-spacing: 3px;
+			background-color: $dark-violet;
+			border: 2px solid $white;
+			transition: 0.3s ease-in;
+
+			&:hover {
+				background-color: $white;
+				color: $dark-violet;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+div.second-block {
+	margin-top: -200px;
+	position: relative;
+
+	&:before {
+		content: " ";
+		display: block;
+		width: 210px;
+		height: 1px;
+		background-color: $dark-grayish-violet;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		top: -50px;
+		z-index: 1;
+	}
+
+	h1 {
+		font-family: $font-family-heading;
+		font-size: 3rem;
+		font-weight: 400;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	div.block {
+		@include mobile-container;
+		max-width: 1400px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 80px;
+
+		img {
+			margin-bottom: 25px;
+		}
+		h2 {
+			font-family: $font-family-heading;
+			font-size: 1.8rem;
+			font-weight: 400;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		p {
+			font-family: $font-family-body;
+			font-size: 1.1rem;
+			font-weight: 400;
+			text-align: center;
+			line-height: 1.5;
+			color: $dark-grayish-violet;
+			margin-bottom: 15px;
 		}
 	}
 }

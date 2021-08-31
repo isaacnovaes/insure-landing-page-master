@@ -1,5 +1,7 @@
 @media screen and (min-width: 800px) {
 	nav {
+		max-width: 1400px;
+		padding-bottom: 30px;
 		div.burger {
 			display: none;
 		}
@@ -13,7 +15,7 @@
 				padding: 15px 20px;
 				color: $dark-grayish-violet;
 				font-weight: 700;
-                transition: .3s ease;
+				transition: 0.3s ease;
 
 				&:hover {
 					color: $dark-violet;
@@ -23,11 +25,163 @@
 					color: $dark-violet;
 					outline: 2px solid $dark-violet;
 
-                    &:hover {
-                        color: $white;
-                        background-color: $very-dark-violet;
-                    }
+					&:hover {
+						color: $white;
+						background-color: $very-dark-violet;
+					}
 				}
+			}
+		}
+	}
+	div.first-block {
+		background-color: $dark-violet;
+		background-clip: content-box;
+		position: relative;
+		overflow: hidden;
+		padding: 0;
+		padding-bottom: 180px;
+		div.first-block-container {
+			@include mobile-container;
+			max-width: 1400px;
+			position: static;
+			z-index: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding-bottom: 250px;
+
+			&:before {
+				width: 210px;
+				height: 500px;
+				background: url(../../images/bg-pattern-intro-left-desktop.svg) no-repeat;
+				background-size: auto;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				z-index: 5;
+			}
+			&::after {
+				width: 450px;
+				height: 600px;
+				background: url(../../images/bg-pattern-intro-right-desktop.svg) no-repeat;
+				background-size: auto;
+				position: absolute;
+				top: -70px;
+				right: -20px;
+				z-index: 5;
+			}
+
+			figure {
+				order: 1;
+				flex-basis: 40%;
+				min-width: 400px;
+
+				img {
+					content: url(../../images/image-intro-desktop.jpg);
+					display: block;
+					width: 100%;
+					height: auto;
+					min-height: 500px;
+					object-fit: cover;
+					position: relative;
+					z-index: 5;
+					top: 100px;
+				}
+			}
+
+			section {
+				margin: 0;
+				padding-bottom: 0;
+				flex-basis: 45%;
+				position: relative;
+				z-index: 5;
+				top: 200px;
+
+				&:before {
+					content: " ";
+					display: block;
+					width: 210px;
+					height: 1px;
+					background-color: $white;
+					position: absolute;
+					left: 0;
+					top: -100px;
+					z-index: 5;
+				}
+
+				h1 {
+					color: $white;
+					font-family: $font-family-heading;
+					font-weight: 400;
+					font-size: 2.8rem;
+					text-align: left; //changed
+				}
+				p {
+					font-size: 1.1rem;
+					margin-top: 20px;
+					color: $white;
+					font-family: $font-family-body;
+					text-align: left; //changed
+					line-height: 1.6;
+				}
+				button {
+					display: block;
+					margin: 25px 0; //changed
+					padding: 15px 30px;
+					color: $white;
+					text-transform: uppercase;
+					font-family: $font-family-body;
+					font-size: 1rem;
+					font-weight: 700;
+					letter-spacing: 3px;
+					background-color: $dark-violet;
+					border: 2px solid $white;
+					transition: 0.3s ease-in;
+
+					&:hover {
+						background-color: $white;
+						color: $dark-violet;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+	div.second-block {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: min-content min-content;
+		justify-content: space-between;
+		@include mobile-container;
+		max-width: 1400px;
+
+		&:before {
+			left: 0;
+			transform: none;
+			top: -50px;
+		}
+
+		h1 {
+			font-size: 3.5rem;
+			text-align: left;
+			grid-area: 1/1/2/4;
+		}
+
+		div.block {
+			align-items: flex-start;
+			margin: 0;
+			width: 100%;
+			margin-bottom: 80px;
+
+			h2 {
+				text-align: left;
+				font-size: 2rem;
+			}
+			p {
+				text-align: left;
+				font-size: 1.2rem;
+				width: 95%;
 			}
 		}
 	}
