@@ -34,14 +34,31 @@
 		}
 	}
 	div.first-block {
-		background-color: $dark-violet;
+		background: url(../../images/bg.svg) no-repeat;
+		background-size: cover;
 		background-clip: content-box;
-		position: relative;
 		overflow: hidden;
-		padding: 0;
-		padding-bottom: 180px;
+		height: 1000px;
+		position: relative;
+		padding-bottom: 350px;
+		margin-bottom: 0px;
+
+		&::before {
+			content: " ";
+			display: block;
+			width: 210px;
+			height: 500px;
+			background: url(../../images/bg-pattern-intro-left-desktop.svg) no-repeat;
+			background-size: auto;
+			position: absolute;
+			left: 0;
+			bottom: 20px;
+			z-index: 5;
+		}
+
 		div.first-block-container {
 			@include mobile-container;
+			background: transparent;
 			max-width: 1400px;
 			position: static;
 			z-index: 0;
@@ -50,21 +67,14 @@
 			align-items: flex-start;
 			padding-bottom: 250px;
 
-			&:before {
-				width: 210px;
-				height: 500px;
-				background: url(../../images/bg-pattern-intro-left-desktop.svg) no-repeat;
-				background-size: auto;
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				z-index: 5;
+			&::before {
+				content: none;
 			}
+
 			&::after {
 				width: 450px;
 				height: 600px;
 				background: url(../../images/bg-pattern-intro-right-desktop.svg) no-repeat;
-				background-size: auto;
 				position: absolute;
 				top: -70px;
 				right: -20px;
@@ -124,7 +134,7 @@
 					text-align: left; //changed
 					line-height: 1.6;
 				}
-				button {
+				a {
 					display: block;
 					margin: 25px 0; //changed
 					padding: 15px 30px;
@@ -183,6 +193,35 @@
 				font-size: 1.2rem;
 				width: 95%;
 			}
+		}
+	}
+
+	div.third-block {
+		flex-direction: row;
+		justify-content: space-around;
+		padding: 50px 0;
+		height: 250px;
+
+		&::before {
+			width: 500px;
+			height: 287.36px;
+			background: url(../../images/bg-pattern-how-we-work-desktop.svg) no-repeat;
+			background-size: cover;
+			bottom: 0;
+			right: 0;
+			z-index: 0;
+		}
+		
+		h1 {
+			z-index: -0;
+			flex-basis: 40%;
+			margin: 2;
+			text-align: left;
+			font-size: 3.5rem;
+		}
+		a {
+			z-index: 2;
+			margin: 0;
 		}
 	}
 }

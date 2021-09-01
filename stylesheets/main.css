@@ -346,14 +346,16 @@ div.first-block-container section p {
   line-height: 1.8;
 }
 
-div.first-block-container section button {
+div.first-block-container section a {
   display: block;
   margin: 25px auto;
+  width: 200px;
   padding: 15px 30px;
   color: rgba(255, 255, 255, 0.835);
   text-transform: uppercase;
   font-family: "Karla", sans-serif;
   font-size: 1rem;
+  text-align: center;
   font-weight: 700;
   letter-spacing: 3px;
   background-color: #2d2640;
@@ -362,7 +364,7 @@ div.first-block-container section button {
   transition: 0.3s ease-in;
 }
 
-div.first-block-container section button:hover {
+div.first-block-container section a:hover {
   background-color: rgba(255, 255, 255, 0.835);
   color: #2d2640;
   cursor: pointer;
@@ -434,6 +436,76 @@ div.second-block div.block p {
   margin-bottom: 15px;
 }
 
+div.third-block {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1400px;
+  height: 370px;
+  background-color: #2d2640;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+div.third-block::before {
+  content: " ";
+  display: block;
+  width: 200px;
+  height: 360.23px;
+  background: url(../../images/bg-pattern-how-we-work-mobile.svg) no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+div.third-block h1 {
+  color: rgba(255, 255, 255, 0.835);
+  font-family: "DM Serif Display", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+div.third-block a {
+  display: block;
+  margin: 25px 0 10px;
+  width: 200px;
+  padding: 15px 5px;
+  color: rgba(255, 255, 255, 0.835);
+  text-transform: uppercase;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background-color: #2d2640;
+  border: 2px solid rgba(255, 255, 255, 0.835);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+div.third-block a:hover {
+  background-color: rgba(255, 255, 255, 0.835);
+  color: #2d2640;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 800px) {
   nav {
     max-width: 1400px;
@@ -473,16 +545,31 @@ div.second-block div.block p {
     background-color: #2b272f;
   }
   div.first-block {
-    background-color: #2d2640;
+    background: url(../../images/bg.svg) no-repeat;
+    background-size: cover;
     background-clip: content-box;
-    position: relative;
     overflow: hidden;
-    padding: 0;
-    padding-bottom: 180px;
+    height: 1000px;
+    position: relative;
+    padding-bottom: 350px;
+    margin-bottom: 0px;
+  }
+  div.first-block::before {
+    content: " ";
+    display: block;
+    width: 210px;
+    height: 500px;
+    background: url(../../images/bg-pattern-intro-left-desktop.svg) no-repeat;
+    background-size: auto;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    z-index: 5;
   }
   div.first-block div.first-block-container {
     width: 90%;
     margin: 0 auto;
+    background: transparent;
     max-width: 1400px;
     position: static;
     z-index: 0;
@@ -497,21 +584,13 @@ div.second-block div.block p {
             align-items: flex-start;
     padding-bottom: 250px;
   }
-  div.first-block div.first-block-container:before {
-    width: 210px;
-    height: 500px;
-    background: url(../../images/bg-pattern-intro-left-desktop.svg) no-repeat;
-    background-size: auto;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 5;
+  div.first-block div.first-block-container::before {
+    content: none;
   }
   div.first-block div.first-block-container::after {
     width: 450px;
     height: 600px;
     background: url(../../images/bg-pattern-intro-right-desktop.svg) no-repeat;
-    background-size: auto;
     position: absolute;
     top: -70px;
     right: -20px;
@@ -572,7 +651,7 @@ div.second-block div.block p {
     text-align: left;
     line-height: 1.6;
   }
-  div.first-block div.first-block-container section button {
+  div.first-block div.first-block-container section a {
     display: block;
     margin: 25px 0;
     padding: 15px 30px;
@@ -587,7 +666,7 @@ div.second-block div.block p {
     -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
   }
-  div.first-block div.first-block-container section button:hover {
+  div.first-block div.first-block-container section a:hover {
     background-color: rgba(255, 255, 255, 0.835);
     color: #2d2640;
     cursor: pointer;
@@ -638,5 +717,36 @@ div.second-block div.block p {
     text-align: left;
     font-size: 1.2rem;
     width: 95%;
+  }
+  div.third-block {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 50px 0;
+    height: 250px;
+  }
+  div.third-block::before {
+    width: 500px;
+    height: 287.36px;
+    background: url(../../images/bg-pattern-how-we-work-desktop.svg) no-repeat;
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+  }
+  div.third-block h1 {
+    z-index: -0;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    margin: 2;
+    text-align: left;
+    font-size: 3.5rem;
+  }
+  div.third-block a {
+    z-index: 2;
+    margin: 0;
   }
 }
