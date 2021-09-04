@@ -1,6 +1,5 @@
 @media screen and (min-width: 800px) {
 	nav {
-		max-width: 1400px;
 		padding-bottom: 30px;
 		div.burger {
 			display: none;
@@ -59,7 +58,6 @@
 		div.first-block-container {
 			@include mobile-container;
 			background: transparent;
-			max-width: 1400px;
 			position: static;
 			z-index: 0;
 			display: flex;
@@ -164,7 +162,6 @@
 		grid-template-rows: min-content min-content;
 		justify-content: space-between;
 		@include mobile-container;
-		max-width: 1400px;
 
 		&:before {
 			left: 0;
@@ -211,7 +208,7 @@
 			right: 0;
 			z-index: 0;
 		}
-		
+
 		h1 {
 			z-index: -0;
 			flex-basis: 40%;
@@ -222,6 +219,15 @@
 		a {
 			z-index: 2;
 			margin: 0;
+		}
+	}
+
+	header.first-header {
+		background: none;
+
+		div.container {
+			flex-direction: row;
+			padding: 0;
 		}
 	}
 }
