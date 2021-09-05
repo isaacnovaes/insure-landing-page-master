@@ -222,12 +222,51 @@
 		}
 	}
 
-	header.first-header {
-		background: none;
+	footer.first-footer {
+		background-image: none;
+		height: 100px;
+		position: relative;
+
+		&::before {
+			content: " ";
+			display: block;
+			height: 200%;
+			width: 40%;
+			position: absolute;
+			background: url(../../images/bg-pattern-footer-desktop.svg) no-repeat left;
+			background-size: contain;
+			z-index: -1;
+		}
 
 		div.container {
 			flex-direction: row;
 			padding: 0;
+
+			> a {
+				padding: 25px;
+				padding-left: 0;
+				transform: none;
+
+				img {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	footer.second-footer {
+		background-color: rgba(120, 120, 120, 0.04);
+
+		div.container {
+			@include mobile-container;
+			padding-top: 50px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			div.link-group {
+				align-items: flex-start;
+			}
 		}
 	}
 }

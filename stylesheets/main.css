@@ -510,17 +510,17 @@ div.third-block a:hover {
   cursor: pointer;
 }
 
-header.first-header {
-  background: url(../../images/bg-pattern-footer-mobile.svg) center;
-  background-size: cover;
+footer.first-footer {
+  background: url(../../images/bg-pattern-footer-mobile.svg) no-repeat center;
+  background-size: 100% 100%;
   margin-top: 100px;
+  background-color: rgba(120, 120, 120, 0.04);
 }
 
-header.first-header div.container {
+footer.first-footer div.container {
   width: 90%;
   margin: 0 auto;
   max-width: 1400px;
-  padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -538,17 +538,19 @@ header.first-header div.container {
       flex-wrap: wrap;
 }
 
-header.first-header div.container > a {
+footer.first-footer div.container > a {
   padding: 15px 50px;
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
 }
 
-header.first-header div.container > a img {
+footer.first-footer div.container > a img {
   width: 112px;
   height: 18px;
   margin-left: calc(50% - 56px);
 }
 
-header.first-header div.container div.header-social-media {
+footer.first-footer div.container div.header-social-media {
   margin: 35px 0;
   width: 250px;
   display: -webkit-box;
@@ -559,24 +561,101 @@ header.first-header div.container div.header-social-media {
           justify-content: space-between;
 }
 
-header.first-header div.container div.header-social-media a {
+footer.first-footer div.container div.header-social-media a {
   padding: 15px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
-header.first-header div.container div.header-social-media a path {
+footer.first-footer div.container div.header-social-media a path {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
-header.first-header div.container div.header-social-media a:hover {
+footer.first-footer div.container div.header-social-media a:hover {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 
-header.first-header div.container div.header-social-media a:hover path {
+footer.first-footer div.container div.header-social-media a:hover path {
   fill: black;
+}
+
+footer.second-footer {
+  background-color: rgba(120, 120, 120, 0.04);
+  position: relative;
+}
+
+footer.second-footer::before {
+  content: " ";
+  display: block;
+  height: .5px;
+  background-color: rgba(117, 115, 115, 0.3);
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 90%;
+  max-width: 1400px;
+}
+
+footer.second-footer div.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding-top: 50px;
+}
+
+footer.second-footer div.container div.link-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+footer.second-footer div.container div.link-group h1 {
+  color: rgba(117, 115, 115, 0.9);
+  font-family: "Karla", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer.second-footer div.container div.link-group a {
+  text-transform: uppercase;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: #2d2640;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+footer.second-footer div.container div.link-group a::before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #2d2640;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+footer.second-footer div.container div.link-group a:hover::before {
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -821,14 +900,58 @@ header.first-header div.container div.header-social-media a:hover path {
     z-index: 2;
     margin: 0;
   }
-  header.first-header {
-    background: none;
+  footer.first-footer {
+    background-image: none;
+    height: 100px;
+    position: relative;
   }
-  header.first-header div.container {
+  footer.first-footer::before {
+    content: " ";
+    display: block;
+    height: 200%;
+    width: 40%;
+    position: absolute;
+    background: url(../../images/bg-pattern-footer-desktop.svg) no-repeat left;
+    background-size: contain;
+    z-index: -1;
+  }
+  footer.first-footer div.container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     padding: 0;
+  }
+  footer.first-footer div.container > a {
+    padding: 25px;
+    padding-left: 0;
+    -webkit-transform: none;
+            transform: none;
+  }
+  footer.first-footer div.container > a img {
+    margin: 0;
+  }
+  footer.second-footer {
+    background-color: rgba(120, 120, 120, 0.04);
+  }
+  footer.second-footer div.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer.second-footer div.container div.link-group {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
