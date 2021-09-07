@@ -701,9 +701,9 @@ footer.second-footer div.container div.link-group a:hover::before {
     display: none;
   }
   nav div.nav-links {
-    -ms-flex-preferred-size: 70%;
-        flex-basis: 70%;
-    max-width: 800px;
+    -ms-flex-preferred-size: 68%;
+        flex-basis: 68%;
+    max-width: 580px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
