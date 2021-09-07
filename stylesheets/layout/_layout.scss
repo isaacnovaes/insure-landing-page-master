@@ -12,8 +12,12 @@ nav {
 	flex-wrap: wrap;
 	padding-top: 25px;
 
-	img {
-		width: 130px;
+	a {
+		padding: 15px 30px;
+		img {
+			transition: 0.5s ease;
+			width: 130px;
+		}
 	}
 	div.burger {
 		height: 45px;
@@ -334,6 +338,7 @@ footer.first-footer {
 				width: 112px;
 				height: 18px;
 				margin-left: calc(50% - 56px);
+				transition: 0.5s ease;
 			}
 		}
 		div.header-social-media {
@@ -366,7 +371,7 @@ footer.second-footer {
 	&::before {
 		content: " ";
 		display: block;
-		height: .5px;
+		height: 0.5px;
 		background-color: rgba(117, 115, 115, 0.3);
 		position: absolute;
 		top: 20px;

@@ -44,7 +44,9 @@ a {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 
-button, input, textarea {
+button,
+input,
+textarea {
 	appearance: none;
 }
 
@@ -87,26 +89,25 @@ button:-moz-focusring,
 	}
 }
 
+// Style the scrollbar
 
-// // Style the scrollbar
+html::-webkit-scrollbar {
+	width: 10px;
+}
 
-// html::-webkit-scrollbar {
-//     width: 10px;
-// }
+html::-webkit-scrollbar-track {
+	background: hsla(276, 4%, 51%, 0.287);
+}
 
-// html::-webkit-scrollbar-track {
-//     background: rgba(78, 77, 77, 0.281);
-// }
+html::-webkit-scrollbar-thumb {
+	background: hsla(256, 25%, 20%, 0.322);
+	border-radius: 10px;
+}
 
-// html::-webkit-scrollbar-thumb {
-//     background: hsla(248, 89%, 64%, 0.7);
-// 	border-radius: 10px;
-// }
+html::-webkit-scrollbar-thumb:hover {
+	background: hsla(256, 33%, 34%, 0.801);
+}
 
-// html::-webkit-scrollbar-thumb:hover {
-//     background: hsl(248, 89%, 64%);
-// }
-
-// html::-webkit-scrollbar-thumb:active {
-//     background:  hsl(248, 59%, 39%);
-// }
+html::-webkit-scrollbar-thumb:active {
+	background: $grayish-blue;
+}

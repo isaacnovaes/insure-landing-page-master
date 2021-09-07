@@ -47,7 +47,9 @@ a {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-button, input, textarea {
+button,
+input,
+textarea {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -92,6 +94,27 @@ button:-moz-focusring,
   }
 }
 
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgba(131, 125, 135, 0.287);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(45, 38, 64, 0.322);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(73, 58, 115, 0.801);
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background: #95a9c6;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -118,7 +141,13 @@ nav {
   padding-top: 25px;
 }
 
-nav img {
+nav a {
+  padding: 15px 30px;
+}
+
+nav a img {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
   width: 130px;
 }
 
@@ -548,6 +577,8 @@ footer.first-footer div.container > a img {
   width: 112px;
   height: 18px;
   margin-left: calc(50% - 56px);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 footer.first-footer div.container div.header-social-media {
@@ -589,7 +620,7 @@ footer.second-footer {
 footer.second-footer::before {
   content: " ";
   display: block;
-  height: .5px;
+  height: 0.5px;
   background-color: rgba(117, 115, 115, 0.3);
   position: absolute;
   top: 20px;
@@ -661,6 +692,10 @@ footer.second-footer div.container div.link-group a:hover::before {
 @media screen and (min-width: 800px) {
   nav {
     padding-bottom: 30px;
+  }
+  nav > a:hover img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   nav div.burger {
     display: none;
@@ -758,13 +793,8 @@ footer.second-footer div.container div.link-group a:hover::before {
   div.first-block div.first-block-container figure img {
     content: url(../../images/image-intro-desktop.jpg);
     display: block;
-    width: 100%;
     height: auto;
     min-height: 500px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    position: relative;
-    z-index: 5;
     top: 100px;
   }
   div.first-block div.first-block-container section {
@@ -788,39 +818,16 @@ footer.second-footer div.container div.link-group a:hover::before {
     z-index: 5;
   }
   div.first-block div.first-block-container section h1 {
-    color: rgba(255, 255, 255, 0.835);
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
     font-size: 2.8rem;
     text-align: left;
   }
   div.first-block div.first-block-container section p {
     font-size: 1.1rem;
-    margin-top: 20px;
-    color: rgba(255, 255, 255, 0.835);
-    font-family: "Karla", sans-serif;
     text-align: left;
     line-height: 1.6;
   }
   div.first-block div.first-block-container section a {
-    display: block;
     margin: 25px 0;
-    padding: 15px 30px;
-    color: rgba(255, 255, 255, 0.835);
-    text-transform: uppercase;
-    font-family: "Karla", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    background-color: #2d2640;
-    border: 2px solid rgba(255, 255, 255, 0.835);
-    -webkit-transition: 0.3s ease-in;
-    transition: 0.3s ease-in;
-  }
-  div.first-block div.first-block-container section a:hover {
-    background-color: rgba(255, 255, 255, 0.835);
-    color: #2d2640;
-    cursor: pointer;
   }
   div.second-block {
     display: -ms-grid;
@@ -841,7 +848,6 @@ footer.second-footer div.container div.link-group a:hover::before {
     left: 0;
     -webkit-transform: none;
             transform: none;
-    top: -50px;
   }
   div.second-block h1 {
     font-size: 3.5rem;
@@ -885,14 +891,11 @@ footer.second-footer div.container div.link-group a:hover::before {
     background: url(../../images/bg-pattern-how-we-work-desktop.svg) no-repeat;
     background-size: cover;
     bottom: 0;
-    right: 0;
-    z-index: 0;
   }
   div.third-block h1 {
-    z-index: -0;
+    z-index: 0;
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
-    margin: 2;
     text-align: left;
     font-size: 3.5rem;
   }
@@ -931,14 +934,11 @@ footer.second-footer div.container div.link-group a:hover::before {
   footer.first-footer div.container > a img {
     margin: 0;
   }
-  footer.second-footer {
-    background-color: rgba(120, 120, 120, 0.04);
+  footer.first-footer div.container > a:hover img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   footer.second-footer div.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1400px;
-    padding-top: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
