@@ -950,8 +950,7 @@ footer.second-footer div.container div.link-group a:hover::before {
             align-items: center;
   }
   footer.second-footer div.container div.link-group {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 }
